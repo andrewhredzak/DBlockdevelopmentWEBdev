@@ -132,14 +132,6 @@ out/
 *.sqlite
 *.sqlite3
 
-# Screenshots or exports
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.svg
-*.ico
-*.webp
 
 # Font files (if not needed in repo)
 *.woff
