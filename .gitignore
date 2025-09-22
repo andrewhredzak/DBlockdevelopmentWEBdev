@@ -143,3 +143,12 @@ out/
 *.bak
 *.backup
 *.old
+
+
+#folders to ignore
+/notes
+/Archive
+
+
+# Local helper scripts (not for source control)
+connect-lightsail.ps1
