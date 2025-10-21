@@ -151,4 +151,4 @@ out/
 
 
 # Local helper scripts (not for source control)
-connect-lightsail.ps1
+connect-DBlock-lightsail.ps1
