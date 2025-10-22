@@ -1,0 +1,73 @@
+:root {
+  --bg: #f7f7f7;
+  --text: #111;
+  --brand: #ffd700; /* inspired by existing pages */
+  --link: #0b5fff;
+  --muted: #666;
+  --card: #fff;
+  --border: #e1e1e1;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+a { color: var(--link); text-decoration: none; }
+a:hover, a:focus { text-decoration: underline; }
+
+/* Shell */
+.navbar { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 10; }
+.navbar-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; gap: 12px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; color: inherit; }
+.brand-logo { width: 36px; height: 36px; object-fit: contain; }
+.brand-text { white-space: nowrap; }
+.nav { display: inline-flex; gap: 16px; }
+.nav-link { padding: 8px 10px; border-radius: 6px; }
+.nav-link.active { background: #f0f3ff; }
+
+.main-content { max-width: 1100px; margin: 0 auto; padding: 16px; }
+
+.footer { border-top: 1px solid var(--border); background: #fff; margin-top: 40px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 16px; color: var(--muted); font-size: 14px; }
+
+/* Home */
+.hero { background: var(--brand); color: #000; border-bottom: 1px solid var(--border); }
+.hero-inner { max-width: 1100px; margin: 0 auto; padding: 28px 16px; display: grid; grid-template-columns: 84px 1fr; gap: 16px; align-items: center; }
+.hero-logo { width: 84px; height: 84px; object-fit: contain; background: #fff; border: 2px solid #000; }
+.hero-copy h1 { margin: 0 0 6px; font-size: 28px; }
+.hero-copy p { margin: 0 0 12px; color: #222; }
+.btn { display: inline-block; background: #222; color: #fff; padding: 10px 14px; border-radius: 8px; }
+
+.home-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 20px; }
+@media (min-width: 700px) { .home-grid { grid-template-columns: repeat(2, 1fr); } }
+.feature-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.feature-link { display: grid; grid-template-columns: 120px 1fr; gap: 14px; color: inherit; padding: 12px; }
+.feature-media { width: 120px; height: 100px; background: #fafafa; border: 1px solid var(--border); display: grid; place-items: center; }
+.feature-media img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.feature-body h3 { margin: 6px 0 4px; }
+.feature-body p { margin: 0; color: var(--muted); }
+
+/* Products */
+.products h1 { font-size: 24px; margin: 8px 0 16px; }
+.products-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 680px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+.product-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.product-link { color: inherit; display: grid; grid-template-columns: 140px 1fr; gap: 14px; padding: 12px; }
+.product-media { width: 140px; height: 120px; background: #fafafa; border: 1px solid var(--border); display: grid; place-items: center; }
+.product-media img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.product-body { display: grid; gap: 6px; align-content: start; }
+.product-title { margin: 4px 0; font-size: 18px; }
+.product-desc { margin: 0; color: var(--muted); }
+.product-price { margin-top: 6px; font-weight: 700; }
+
+/* Detail */
+.product-detail { display: grid; gap: 16px; }
+.back-link { color: inherit; }
+.detail-layout { display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 820px) { .detail-layout { grid-template-columns: 320px 1fr; } }
+.detail-media { background: #fafafa; border: 1px solid var(--border); border-radius: 8px; display: grid; place-items: center; padding: 8px; }
+.detail-media img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.detail-price { font-size: 20px; font-weight: 700; margin-top: 8px; }
+
+/* Accessibility helpers from existing HTML aesthetics (minimal) */
+/* Reuse opportunity: drop any additional CSS into /assets and link via <img src="/assets/...">; or import extra styles into this file. */
+

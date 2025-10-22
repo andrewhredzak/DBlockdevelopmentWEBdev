@@ -1,0 +1,16 @@
+{
+  "name": "dblock-mern-starter",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Starter MERN project with React (Vite) client and Express server",
+  "scripts": {
+    "install:all": "npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "build": "npm run build --prefix client",
+    "start": "node server/src/index.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
+
