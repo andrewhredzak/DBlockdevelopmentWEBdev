@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import SpectroSection from '../components/SpectroSection.jsx';
 
 export default function ProductDetail() {
   const { slug } = useParams();
@@ -28,19 +29,32 @@ export default function ProductDetail() {
     };
   }, [slug]);
 
-  if (loading) return <p>Loading…</p>;
+  if (loading) return <p>Loading...</p>;
   if (error) return <p role="alert">{error}</p>;
   if (!item) return <p>Not found.</p>;
 
   return (
     <article className="product-detail">
-      <Link to="/products" className="back-link">← Back to Products</Link>
+      <SpectroSection className="hero" height={180} bands={20}>
+        <div className="hero-inner">
+          <img
+            className="hero-logo"
+            src="/assets/images/dblock_logo_Final.svg"
+            alt="D Block Development logo"
+            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+          />
+          <div className="hero-copy">
+            <h1>{item.name}</h1>
+            <p>{item.shortDescription || 'Details and specifications'}</p>
+          </div>
+        </div>
+      </SpectroSection>
+      <Link to="/products" className="back-link">&larr; Back to Products</Link>
       <div className="detail-layout">
         <div className="detail-media">
-          <img src={item.image || '/assets/placeholder.png'} alt={item.name} />
+          <img src={item.image || '/assets/images/TEST111.png'} alt={item.name} />
         </div>
         <div className="detail-body">
-          <h1>{item.name}</h1>
           <p>{item.description}</p>
           <div className="detail-price">${item.price?.toFixed?.(2)}</div>
         </div>
@@ -48,4 +62,3 @@ export default function ProductDetail() {
     </article>
   );
 }
-

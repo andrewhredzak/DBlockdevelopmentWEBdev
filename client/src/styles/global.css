@@ -6,6 +6,9 @@
   --muted: #666;
   --card: #fff;
   --border: #e1e1e1;
+  /* Spectro scheme */
+  --bg-cyan-1: #eaf7ff; /* pale cyan top */
+  --bg-cyan-2: #dff3ff; /* pale cyan bottom */
 }
 
 * { box-sizing: border-box; }
@@ -30,12 +33,23 @@ a:hover, a:focus { text-decoration: underline; }
 .footer-inner { max-width: 1100px; margin: 0 auto; padding: 16px; color: var(--muted); font-size: 14px; }
 
 /* Home */
-.hero { background: var(--brand); color: #000; border-bottom: 1px solid var(--border); }
+.hero { color: #111; border-bottom: 1px solid var(--border); }
 .hero-inner { max-width: 1100px; margin: 0 auto; padding: 28px 16px; display: grid; grid-template-columns: 84px 1fr; gap: 16px; align-items: center; }
 .hero-logo { width: 84px; height: 84px; object-fit: contain; background: #fff; border: 2px solid #000; }
 .hero-copy h1 { margin: 0 0 6px; font-size: 28px; }
 .hero-copy p { margin: 0 0 12px; color: #222; }
 .btn { display: inline-block; background: #222; color: #fff; padding: 10px 14px; border-radius: 8px; }
+
+/* Spectrogram cyan background with red traces */
+.spectro {
+  position: relative;
+  background: linear-gradient(180deg, var(--bg-cyan-1), var(--bg-cyan-2));
+  overflow: hidden;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.spectro-inner { position: relative; z-index: 1; }
+.spectro-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; z-index: 0; pointer-events: none; }
 
 .home-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 20px; }
 @media (min-width: 700px) { .home-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -70,4 +84,3 @@ a:hover, a:focus { text-decoration: underline; }
 
 /* Accessibility helpers from existing HTML aesthetics (minimal) */
 /* Reuse opportunity: drop any additional CSS into /assets and link via <img src="/assets/...">; or import extra styles into this file. */
-

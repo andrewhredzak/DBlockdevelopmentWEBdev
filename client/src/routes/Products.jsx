@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import ProductCard from '../components/ProductCard.jsx';
+import SpectroSection from '../components/SpectroSection.jsx';
 
 export default function Products() {
   const [items, setItems] = useState([]);
@@ -29,8 +30,22 @@ export default function Products() {
 
   return (
     <section className="products">
-      <h1>Products</h1>
-      {loading && <p>Loading…</p>}
+      <SpectroSection className="hero" height={200} bands={22}>
+        <div className="hero-inner">
+          <img
+            className="hero-logo"
+            src="/assets/images/dblock_logo_Final.svg"
+            alt="D Block Development logo"
+            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+          />
+          <div className="hero-copy">
+            <h1>Products</h1>
+            <p>Explore DBLOCK latest tools and utilities.</p>
+          </div>
+        </div>
+      </SpectroSection>
+
+      {loading && <p>Loading...</p>}
       {error && <p role="alert">{error}</p>}
       <div className="products-grid">
         {items.map((p) => (
